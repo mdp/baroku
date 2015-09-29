@@ -10,7 +10,9 @@ install:
 	npm install
 
 server_build:
-	babel -d build server/index.js && rsync -av --include \*/ --include \*.json --exclude \*  ./server/ ./build/server/
+	babel -d build server/index.js
+	rsync -av --include \*/ --include \*.json --exclude \*  ./server/ ./build/server/
+	rsync -av --include \*/ --include \*.ejs --exclude \*  ./server/ ./build/server/
 
 test:
 	npm run test

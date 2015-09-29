@@ -4,9 +4,10 @@ let path = require('path')
 let app = express();
 
 var staticPath = path.join(__dirname, './../public');
+var viewPath = path.join(__dirname, './views');
 
 app.set('view engine', 'ejs');
-app.set('views', './server/views');
+app.set('views', viewPath);
 
 app.use(express.static(staticPath));
 
